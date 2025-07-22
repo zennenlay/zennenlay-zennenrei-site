@@ -1,0 +1,312 @@
+
+    
+    
+
+  .quiet-nav-horizontal {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    background: rgba(255,255,255,0.95);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .quiet-nav-horizontal ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  .quiet-nav-horizontal li {
+    display: inline;
+  }
+  .quiet-nav-horizontal a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  .quiet-nav-horizontal a:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+
+
+  .quiet-nav {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    background: rgba(255,255,255,0.9);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .quiet-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .quiet-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  .quiet-nav a:hover {
+    color: #000;
+  }
+
+
+  .top-nav {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5em 1em;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  .top-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+  }
+  .top-nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+  }
+  .top-nav a:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+
+
+/* ---- Enhanced Member Style ---- */
+
+/* メンバー表示の改善 */
+.member-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  margin-top: 50px;
+}
+
+.member-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+  text-align: center;
+}
+
+.member-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  margin-bottom: 10px;
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.member-name {
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.member-role {
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.member-links a {
+  margin: 2px 5px;
+  color: #ff66cc;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.member-links a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* 修正：メニューバーの隙間をなくす */
+.quiet-nav-horizontal {
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+  padding: 0;
+  margin: 0;
+}
+
+.quiet-nav-horizontal ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.quiet-nav-horizontal li {
+  margin: 0 10px;
+  padding: 0;
+}
+
+
+
+/* ナビゲーション項目間の隙間を最小化 */
+.quiet-nav-horizontal ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  gap: 0; /* 余計な間隔を完全排除 */
+}
+
+.quiet-nav-horizontal li {
+  margin: 0;
+  padding: 0 8px; /* 必要最低限の横余白 */
+}
+
+.quiet-nav-horizontal a {
+  padding: 4px 6px;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+}
+
+
+/* --- Restore original nav --- */
+
+/* ナビゲーションを元に戻す */
+.quiet-nav-horizontal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem;
+  background-color: black;
+}
+
+.quiet-nav-horizontal ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.quiet-nav-horizontal li {
+  display: inline;
+}
+
+.quiet-nav-horizontal a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+
+
+/* PERFORMANCE セクション */
+#performance {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.glow-text {
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 0 0 10px #ff66cc;
+}
+
+.coming-soon {
+  font-size: 1.2rem;
+  color: white;
+  border: 2px solid #ff66cc;
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top: 20px;
+}
+
+/* 共通ナビゲーションスタイルを追加 */
+ul.quiet-nav-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 20px;
+    margin: 0;
+    list-style: none;
+    background-color: white;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+ul.quiet-nav-horizontal li a {
+    text-decoration: none;
+    color: black;
+}
+
+ul.quiet-nav-horizontal li a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  background-color: #ff00ff;
+  background-image: url('images/bg_original.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}

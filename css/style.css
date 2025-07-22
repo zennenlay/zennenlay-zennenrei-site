@@ -1,0 +1,597 @@
+
+
+
+
+
+.site-title {
+  position: relative;
+  margin-top: 6rem;
+  text-align: center;
+  font-size: 3.5rem;
+  z-index: 400;
+  border-bottom: 2px solid #555;
+  padding-bottom: 0.7rem;
+
+  z-index: 100;
+  pointer-events: none;
+
+  display: none;
+}
+
+.site-title a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-toggle {
+  font-size: 2.2rem;
+  cursor: pointer;
+  position: fixed;
+  top: 1.5rem;
+  left: 1.2rem;
+  z-index: 500;
+  color: #fff;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  background-color: #000;
+  overflow-y: auto;
+  transition: left 0.3s ease;
+  z-index: 300;
+  padding-top: 80px;
+  visibility: hidden;
+  opacity: 0;
+  border-right: 1px solid #333;
+}
+
+.menu.visible {
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  margin: 0;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.menu ul li a {
+  display: block;
+  padding: 16px 22px;
+  font-size: 1.6rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu ul li a:hover {
+  background-color: #333;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+  z-index: 200;
+}
+
+#overlay.active {
+  display: block;
+}
+
+main.content {
+  max-width: 840px;
+  margin: 8rem auto;
+  padding: 3rem 2rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+main.content section {
+  margin-bottom: 4rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 2rem;
+}
+
+footer {
+  text-align: center;
+  margin: 4rem 0 2rem;
+  font-size: 1.1rem;
+  color: #aaa;
+}
+
+.fade-title {
+  font-size: 8rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
+  
+text-align: center;
+  margin-top: 3rem;
+  transition: opacity 0.3s ease;
+
+  text-align: center;
+  margin: 0;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.typing-text {
+  max-width: 800px;
+  margin: 2rem auto 4rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  line-height: 2;
+  white-space: pre-wrap;
+  text-align: center;
+  min-height: 180px;
+}
+
+/* スマホ向け対応 */
+@media screen and (max-width: 768px) {
+  .site-title {
+    font-size: 2.2rem;
+    padding: 0 1rem;
+  
+  z-index: 100;
+  pointer-events: none;
+
+  display: none;
+}
+
+  .menu ul li a {
+    font-size: 1.4rem;
+    padding: 14px 18px;
+  }
+
+  main.content {
+    padding: 2rem 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .fade-title {
+    font-size: 8rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
+  
+
+  text-align: center;
+  margin: 0;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  margin: 0;
+}
+
+  .gallery-grid, .works-year {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-item, .work-card {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  .typing-text {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .menu-toggle {
+    font-size: 2rem;
+  }
+}
+
+
+
+  to { opacity: 1; }
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.gallery-item {
+  width: 280px;
+  aspect-ratio: 4/3;
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border: 1px solid #444;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.gallery-item::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.works-section, .newsflash {
+  padding: 3rem 0;
+}
+
+.works-year {
+  margin-bottom: 3rem;
+}
+
+.works-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.work-card {
+  width: 280px;
+  aspect-ratio: 4/3;
+  background-color: #222;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+  border: 1px solid #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-card:hover {
+  transform: scale(1.05);
+}
+
+.work-card::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.ticker {
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: #222;
+  padding: 1rem;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+}
+
+
+/* ページ背景色設定 */
+body.home-page { background-color: #ff00aa; }
+body.news-page { background-color: #39ff14; }
+body.dailypicture-page { background-color: #00ffff; }
+body.member-page { background-color: #ff6600; }
+body.about-page { background-color: #cc00ff; }
+body.contact-page { background-color: #ff0033; }
+
+/* トランジションオーバーレイ */
+.transition-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: currentColor;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 9999;
+  pointer-events: none;
+  
+}
+
+
+  100% {
+    width: 5000px;
+    height: 5000px;
+    opacity: 0;
+  }
+}
+
+
+.member-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* メンバーレイアウト調整 */
+.member-wrapper {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.top-member {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.grid-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.member {
+    width: 14%;
+    min-width: 120px;
+    text-align: center;
+}
+
+.member-img, .placeholder {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid hotpink;
+    background: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: auto;
+}
+
+.info {
+    background: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    color: black;
+    font-weight: 600;
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 768px) {
+  .grid-members {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .member {
+    width: 40%;
+    margin-bottom: 2rem;
+  }
+}
+
+
+/* 6人を横並びに収める調整 */
+.grid-members {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1rem;
+    overflow-x: auto;
+}
+.member {
+    flex: 0 0 14%;
+    max-width: 14%;
+}
+
+
+/* 横一列に6人並べる＋スクロール解除 */
+.grid-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.member {
+    flex: 0 0 calc(100% / 6 - 1rem);
+    max-width: calc(100% / 6 - 1rem);
+}
+
+
+/* ページ全体を使って6枠横並び、スクロールなし */
+.grid-members {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 0 5vw;
+    box-sizing: border-box;
+}
+
+.member {
+    flex: 0 0 calc(100% / 6 - 2vw);
+    max-width: calc(100% / 6 - 2vw);
+}
+
+
+/* 中央に収めず全体を使う */
+.member-wrapper {
+    width: 100%;
+    max-width: none;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+
+/* スクロール完全解除 + 横幅調整 */
+body, html {
+    overflow-x: hidden;
+}
+
+.grid-members {
+    overflow-x: hidden !important;
+}
+
+
+/* スマホ対応: 2列3段に切り替え */
+@media screen and (max-width: 768px) {
+  .grid-members {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .member {
+    flex: 0 0 45%;
+    max-width: 45%;
+    margin-bottom: 2rem;
+  }
+}
+
+
+/* 2列目に3枠、3列目に3枠レイアウト（PC） */
+.grid-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    padding: 0 2vw;
+    box-sizing: border-box;
+}
+
+.member {
+    flex: 0 0 30%;
+    max-width: 30%;
+    min-width: 200px;
+    text-align: center;
+}
+
+
+/* 名前と役職を縦並びにし、枠同士の間隔を拡大 */
+.member {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.member .name,
+.member .role {
+    display: block;
+    margin: 0.25rem 0;
+}
+
+
+/* 名前と役職を縦に明示的に表示 */
+.member .name {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.member .role {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  background-color: #ff00ff;
+  background-image: url('images/bg_original.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.performance-section {
+  padding: 8rem 2rem;
+  text-align: center;
+}
+
+.performance-title {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.performance-coming-soon {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: bold;
+  background-color: rgba(0,0,0,0.6);
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
